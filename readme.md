@@ -102,25 +102,6 @@ The fan layout uses a **normalized position system**:
 3. **Arc Height**: Uses parabolic formula for natural curve
 4. **Centering**: Ensures the card group center aligns with screen center
 
-### Hover Effect System
-
-```gdscript
-# Calculate hover position (card bottom touches screen bottom)
-func _calculate_hover_position() -> Vector2:
-	var viewport_size = get_viewport_rect().size
-	var card_size = custom_minimum_size * HOVER_SCALE
-	var target_bottom_y = viewport_size.y
-	var target_center_y = target_bottom_y - card_size.y / 2
-	return Vector2(hover_start_position.x, target_center_y)
-```
-
-### Anti-Flicker Protection
-
-The system prevents flickering by:
-- Recording hover start position
-- Using direct position setting for critical movements
-- Separating position and animation tweening
-
 ## 🎮 Usage Examples
 
 ### Basic Implementation
